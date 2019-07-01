@@ -1,0 +1,233 @@
+/*basic html styles*/
+html{
+	height: 1100px;
+	background-color: black;
+	color: white;
+}
+body{
+	/* min-width: 750px; */
+	width: 900px;
+	margin: auto;
+	padding: 5px;
+}
+#header{
+	text-align: center;
+	font-size: 30pt;
+	color: rgb(204, 0, 0);
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-style: italic;
+	text-shadow: 4px 4px 3px black, 6px 6px 0px gold;
+}
+
+/*styles for the rule tables*/
+#basicRules{
+	border: 1px solid black;
+	border-collapse: collapse;
+	color: gold;
+}
+#basicRules tr td{
+	border: 10px solid black;
+	text-align: center;
+	padding: 10px;
+}
+#whiteDiceDesc{background-color: ivory; color: black; width: 200px; font-family: monospace; font-size: 12pt;}
+#blueDiceDesc{background-color: cornFlowerBlue; color: white; width: 200px; font-family: monospace; font-size: 12pt;}
+#redDiceDesc{background-color: rgb(187, 17, 51); color: white; width: 200px; font-family: monospace; font-size: 12pt;}
+#basicRules img{width: 200px;}
+td ul{text-align: left;}
+#advRules{display: none !important;}
+
+/*styling for the game play area*/
+#playersArea, #computersArea{
+	width: 405px;
+	height: 300px;
+	/* border: 1px solid black; */
+	padding: 5px;
+	margin-top: 17.5px;
+	text-align: center !important;
+	float: left;
+}
+#playersArea{
+	margin-left: 15px;
+	margin-right: 30px;
+	/* border: 3px solid purple; */
+}
+/* #computersArea{border: 3px solid orange;} */
+
+/*styling for the dice images in the gameplay area*/
+.rolledDice{width: 125px;}
+#playerDie1, #computerDie1{
+	border-radius: 17px;
+	background-color: ivory;
+}
+#playerDie2, #computerDie2{
+	border-radius: 17px;
+	background-color: cornFlowerBlue;
+}
+#playerDie3, #computerDie3{
+	border-radius: 17px;
+	background-color: rgb(187, 17, 51);
+}
+#playersResults, #computersResults{border-collapse: collapse;}
+#playersResults td, #computersResults td{width: 130px;}
+#rowOne{
+	font-style: underline;
+	font-weight: bold;
+	font-size: 13pt;
+	border-bottom-style: groove;
+	color: gold;
+	border-color: gold;
+}
+#rowTwo{
+	font-family: monospace;
+	font-size: 12pt;
+}
+#rowThree{
+	font-style: italic;
+}
+.actionMessage{
+	padding-top: 10px;
+}
+#colTwo{
+	border-left-style: ridge;
+	border-right-style:ridge;
+	border-color: gold;
+}
+
+/*styles for the health bars*/
+.healthBar{
+	text-align: center !important;
+	border: 2px solid white;
+	width: 400px;
+	height: 30px;
+	background-color: red;
+	box-shadow:  0px -10px rgba(0, 0, 0, 0.1) inset;
+	
+}
+.damageBar{
+	margin: auto !important;
+	width: 400px;
+	margin: auto;
+	height: 30px;
+	background-color: orange;
+	box-shadow: 0px -10px rgba(0, 0, 0, 0.1) inset;
+}
+.healthValue{
+	width: 400px;
+	margin: auto !important;
+	text-align: center;
+	height: 30px;
+	background-color: green;
+	box-shadow:  0px -10px rgba(0, 0, 0, 0.1) inset;
+}
+#playerHealthPercent, #computerHealthPercent{
+	text-align: center;
+	/* font-weight: bold; */
+	font-family: monospace;
+	font-size: 12pt;
+}
+
+/*css for the game over screen*/
+#gameOverScreen{
+	margin-top: -65px;
+	text-align: center;
+	width: 900px;
+	height: 400px;
+	/* background-color: pink; */
+	background-color: rgba(0, 0, 0, 0.7);
+	font-family: monospace;
+	/* border: 1px solid cyan; */
+	position: absolute;
+	font-size: 15pt;
+	z-index: 2;
+}
+#gameOverScreen-content{
+	z-index: 2;
+}
+#screenHeader{
+	letter-spacing: 5px;
+	margin-top: 0px;
+	font-size: 25pt;
+	font-weight: bold;
+	
+	color: rgb(204, 0, 0);
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-style: italic;
+	text-shadow: 4px 4px 3px black, 6px 6px 0px gold;
+	letter-spacing: 5px;
+}
+#screenSubHeader{
+	font-family: monospace;
+	font-size: 15pt;
+	
+	color: rgb(204, 0, 0);
+	font-family: "Arial Black", Gadget, sans-serif;
+	letter-spacing: 2px;
+	font-style: italic;
+	text-shadow: 2px 2px 1px black, 3px 3px 0px gold;
+	letter-spacing: 5px;
+}
+.screenContent{
+	font-size: 15pt;
+	color: gold;
+}
+#category{
+	color: rgb(204, 0, 0);
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-style: italic;
+	text-shadow: 2px 2px 1px black, 3px 3px 0px gold;
+}
+#restartButton{
+	border-radius: 100px;
+	background: none;
+	font-size: 15pt;
+	font-weight: bold;
+	font-family: monospace;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	
+	/* color: rgb(204, 0, 0); */
+	/* border-color: gold; */
+	color: gold;
+	border-color: rgb(204, 0, 0);
+	border-width: 4px;
+}
+#restartButton:hover, #startButton:hover{
+	font-style: italic;
+	cursor: pointer;
+}
+
+/*Refined CSS*/
+#buttonArea{
+	text-align: center;
+}
+#startButton{
+	margin: auto;
+	font-size: 15pt;
+	background: none;
+	color: white;
+	border-radius: 5px;
+	width: 175px;
+	height: 40px;
+	color: rgba(255, 215, 0, 1.0);
+	border-color: rgba(204, 0 ,0);
+	border-width: 4px;
+}
+#startButton:disabled{
+	color: rgba(255, 215, 0, 0.6);
+	border-style:inset;
+}
+#startButton:disabled:hover{
+	font-style: normal;
+	cursor: context-menu;
+}
+
+
+
+
+
+
+
+
