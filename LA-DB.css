@@ -1,11 +1,10 @@
 /*basic html styles*/
 html{
-	height: 1100px;
+	height: 1250px;
 	background-color: black;
 	color: white;
 }
 body{
-	/* min-width: 750px; */
 	width: 900px;
 	margin: auto;
 	padding: 5px;
@@ -35,7 +34,6 @@ body{
 #redDiceDesc{background-color: rgb(187, 17, 51); color: white; width: 200px; font-family: monospace; font-size: 12pt;}
 #basicRules img{width: 200px;}
 td ul{text-align: left;}
-#advRules{display: none !important;}
 
 /*styling for the game play area*/
 #playersArea, #computersArea{
@@ -50,9 +48,7 @@ td ul{text-align: left;}
 #playersArea{
 	margin-left: 15px;
 	margin-right: 30px;
-	/* border: 3px solid purple; */
 }
-/* #computersArea{border: 3px solid orange;} */
 
 /*styling for the dice images in the gameplay area*/
 .rolledDice{width: 125px;}
@@ -122,7 +118,6 @@ td ul{text-align: left;}
 }
 #playerHealthPercent, #computerHealthPercent{
 	text-align: center;
-	/* font-weight: bold; */
 	font-family: monospace;
 	font-size: 12pt;
 }
@@ -133,10 +128,8 @@ td ul{text-align: left;}
 	text-align: center;
 	width: 900px;
 	height: 400px;
-	/* background-color: pink; */
 	background-color: rgba(0, 0, 0, 0.7);
 	font-family: monospace;
-	/* border: 1px solid cyan; */
 	position: absolute;
 	font-size: 15pt;
 	z-index: 2;
@@ -188,13 +181,11 @@ td ul{text-align: left;}
 	padding-top: 2px;
 	padding-bottom: 2px;
 	
-	/* color: rgb(204, 0, 0); */
-	/* border-color: gold; */
 	color: gold;
 	border-color: rgb(204, 0, 0);
 	border-width: 4px;
 }
-#restartButton:hover, #startButton:hover{
+#restartButton:hover, #startButton:hover, #quitButton:hover{
 	font-style: italic;
 	cursor: pointer;
 }
@@ -224,10 +215,29 @@ td ul{text-align: left;}
 	cursor: context-menu;
 }
 
-
-
-
-
-
-
+#footer{
+	margin-top: 350px;
+	text-align: center;
+}
+#footer img{
+	width: 50px;
+}
+#quitButton{
+	margin: auto;
+	font-size: 12pt;
+	background: none;
+	color: white;
+	border-radius: 5px;
+	width: 165px;
+	height: 30px;
+	color: rgba(255, 215, 0, 1.0);
+	border-color: rgba(204, 0 ,0);
+	border-width: 3px;
+}
+#disclaimer{
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 10pt;
+	text-align: center;
+	font-style: italic;
+}
 

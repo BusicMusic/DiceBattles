@@ -324,13 +324,6 @@ function shakeBars(player){
 function animateDice(pDie1, pDie2, pDie3, cDie1, cDie2, cDie3){
 	var pDie1= pDie1, pDie2= pDie2, pDie3= pDie3;
 	var cDie1= cDie1, cDie2= cDie2, cDie3= cDie3;
-	// var pDie1= 1;
-	// var pDie2= 2;
-	// var pDie3= 3;
-	
-	// var cDie1= 4;
-	// var cDie2= 5;
-	// var cDie3= 6;
 	
 	var pD1= document.getElementById("playerDie1");
 	var pD2= document.getElementById("playerDie2");
@@ -461,7 +454,6 @@ function endGame(player){
 	}
 	else{
 		screen.style.display='none';
-		// de-populateScreen();
 	}
 }
 function populateScreen(winner, loser, screen){
@@ -487,15 +479,6 @@ function populateScreen(winner, loser, screen){
 	
 	var roundsPlayedText= document.getElementById("roundsPlayed");
 	roundsPlayedText.innerHTML= (totalRoundsPlayed);
-	
-	// var lowestHealthLabel= document.getElementById("lowestHealthLabel");
-	// lowestHealthLabel.innerHTML=("Lowest health of "+winner);
-	
-	// var lowestHealthText= document.getElementById("lowestHealth");
-	// lowestHealthText.innerHTML= (lowestHealthValue);
-	
-	// var totalDmgText= document.getElementById("totalDmg");
-	// totalDmgText.innerHTML=(totalDmgPercentage+'%');
 }
 
 //code to restart the game

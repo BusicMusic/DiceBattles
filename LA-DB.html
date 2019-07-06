@@ -1,0 +1,186 @@
+<!--This game is based off of a dice game briefly mentioned in the Web Toon comic: 'Hardcore Leveling Warrior', where players fight by rolling dice instead of relying on their respective skill levels in this fantasy VR-MMORPG
+
+I did NOT come up with this game myself, I only created this webpage that allows people to play the game with either a computer or a second person-->
+<!DOCTYPE html>
+ <html>
+  <head>
+   <title>Lucid Adventure - Dice Battles</title>
+   <link href="iconDie.png" rel="icon" type="image"/>
+   <link href="LA-DB.css" rel="stylesheet" type="text/css"/>
+   <script src="LA-DB.js" rel="javascript" type="text/javascript"></script>
+  </head>
+  
+  <body>
+   <div id="header">
+    Lucid Adventure - Dice Battles
+   </div>
+   
+   <p>
+    <table id="basicRules">
+	 <tr>
+	  <td id="whiteDiceDesc">
+	   <b>White Dice</b>
+	   <br/><br/>
+	   <img src="whiteDice.png" alt="[White Dice]"/>
+	   <br/>Even Number = Attack
+	   <br/>Odd Number = Defend
+	  </td>
+	  <td id="blueDiceDesc">
+	   <b>Blue Dice</b>
+	   <br/><br/>
+	   <img src="blueDice.png" alt="[Blue Dice]"/>
+	   <br/>Attack or Defend with Magic
+	   <br/><sub><i>Will be used if it is <b>Greater</b> than the Red Dice value</i></sub>
+	  </td>
+	  <td id="redDiceDesc">
+	   <b>Red Dice</b>
+	   <br/><br/>
+	   <img src="redDice.png" alt="[Red Dice]"/>
+	   <br/>Attack or Defend with Physical
+	   <br/><sub><i>Will be used if it is <b>Greater</b> than the Blue Dice value</i></sub>
+	  </td>
+	 </tr>
+	 <tr>
+	  <td colspan="3">
+	   <i><b style="font-size: 14pt">How to play</b>
+	    <ul>
+		 <li>If both players roll <b>[White:Even]</b> then both players take damage</li>
+		 <li>If both players roll <b>[White:Odd]</b> then neither player takes any damage for that turn</li>
+		 <li><b>Magical</b> attacks can only be blocked by a <b>Magical</b> defense</li>
+		 <li><b>Physical</b> attacks can only be blocked by a <b>Physical</b> defense</li>
+		 <li>When your Blue and Red dice are rolled, the weaker of the two will be faded. The faded die will not affect your roll</li>
+		 <li>If P1's attack value is the same as P2's defense value then no damage is done, regardless of Magical or Physical attack attribute</li>
+		</ul>
+	   </i>
+	  </td>
+	 </tr>
+	</table>
+   </p>
+   <hr/>
+   <br/>
+   <div id="buttonArea">
+	<button onclick="rollAllDice()" id="startButton">Start the Game</button>
+   </div>
+   <br/>
+   <div id="gameArea" onload="resetHealth()">
+	<div id="gameOverScreen" style="display: none;")>
+	 <div id="gameOverScreen-content">
+	  <span id="screenHeader">THE BATTLE HAS ENDED</span>
+	  <br/><br/>
+	  <span id="screenSubHeader">RESULTS</span>
+	  <br/><br/>
+	  <span class="screenContent" id="category">Winner</span>
+	  <br/>
+	  <span class="screenContent" id="winner">2</span>
+	  <br/><br/>
+	  <span class="screenContent" id="category">Rounds Played</span>
+	  <br/>
+	  <span class="screenContent" id="roundsPlayed">4</span>
+	  <br/>
+	  <br/><br/><br/>
+	  <button id="restartButton" onclick="restartGame()">Play Again</button>
+	 </div>
+	</div>  
+	<div id="playersArea">
+	 <div class= "healthBar" id="playerHealthBar">
+	   <div class="damageBar" id="playerDamageBar">
+	   <div class= "healthValue" id="playerHealthValue">
+	    <span id="playerHealthPercent">100%</span>
+	   </div>
+	  </div>
+	 </div>	
+	 <i style= "color: gold">Player 1's Dice</i>
+	 <br/>
+	 <img class="rolledDice" id="playerDie1" src="ImageResources/1-die.png"/>
+	 <img class="rolledDice" id="playerDie2" src="ImageResources/2-die.png"/>
+	 <img class="rolledDice" id="playerDie3" src="ImageResources/3-die.png"/>
+	 <br/><br/>
+	 <table id="playersResults">
+	  <tr id="rowOne">
+	   <td>Action</td>
+	   <td id="colTwo">Attribute</td>
+	   <td>Power Level</td>
+	  </tr>
+	  <tr id="rowTwo">
+	   <td>
+	    <span id="playerAttacking" class="ActionStyle">Attacking</span><br/>
+		<span id="playerDefending" class="ActionStyle">Defending</span>
+	   </td>
+	   <td id="colTwo">
+	    <span id="playerUseMagical" class="ActionType">Magical</span><br/>
+		<span id="playerUsePhysical" class="ActionType">Physical</span>
+	   </td>
+	   <td id="playerPowerList">
+	    <span id="playerPower1" class="PowerLevels">1</span> 
+		<span id="playerPower2" class="PowerLevels">2</span>
+		<span id="playerPower3" class="PowerLevels">3</span>
+		<span id="playerPower4" class="PowerLevels">4</span>
+		<span id="playerPower5" class="PowerLevels">5</span>
+		<span id="playerPower6" class="PowerLevels">6</span>
+	   </td>
+	  </tr>
+	  <tr id="rowThree">
+	   <td id="playerActionMessage" class="actionMessage" colspan='3'>
+	    Player 1 will be _________ using a ________ power of _
+	   </td>
+	  </tr>
+	 </table>
+	</div>
+	
+	<div id="computersArea">
+	 <div class= "healthBar" id="computerHealthBar">
+	  <div class="damageBar" id="computerDamageBar">
+	   <div class= "healthValue" id="computerHealthValue">
+	    <span id="computerHealthPercent">100%</span>
+	   </div>
+	  </div>
+	 </div>
+	 <i style= "color: gold">Player 2's Dice</i>
+	 <br/>
+	 <img class="rolledDice" id="computerDie1" src="ImageResources/4-die.png"/>
+	 <img class="rolledDice" id="computerDie2" src="ImageResources/5-die.png"/>
+	 <img class="rolledDice" id="computerDie3" src="ImageResources/6-die.png"/>
+	 <br/><br/>
+	 <table id="computersResults">
+	  <tr id="rowOne">
+	   <td>Action</td>
+	   <td id="colTwo">Attribute</td>
+	   <td>Power Level</td>
+	  </tr>
+	  <tr id="rowTwo">
+	   <td>
+	    <span id="computerAttacking" class="ActionStyle">Attacking</span><br/>
+		<span id="computerDefending" class="ActionStyle">Defending</span>
+	   </td>
+	   <td id="colTwo">
+	    <span id="computerUseMagical" class="ActionType">Magical</span><br/>
+		<span id="computerUsePhysical" class="ActionType">Physical</span>
+	   </td>
+	   <td id="computerPowerList">
+	    <span id="computerPower1" class="PowerLevels">1</span> 
+		<span id="computerPower2" class="PowerLevels">2</span>
+		<span id="computerPower3" class="PowerLevels">3</span>
+		<span id="computerPower4" class="PowerLevels">4</span>
+		<span id="computerPower5" class="PowerLevels">5</span>
+		<span id="computerPower6" class="PowerLevels">6</span>
+	   </td>
+	  </tr>
+	  <tr id="rowThree">
+	   <td id="computerActionMessage" class="actionMessage" colspan='3'>
+	    Player 2 will be _________ using a ________ power of __
+	   </td>
+	  </tr>
+	 </table>
+	</div>
+   </div> 
+   <div id="footer">
+    <br/>
+    <hr/><br/>
+	<a href="https://busicmusic.github.io"><button id="quitButton">Back to Main Menu</button></a>
+	<br/>
+	<br/>
+	<br/>
+	<span id="disclaimer">I did not come up with this game. This game is based off of a game that appears in a Webtoon called 'Hardcor Leveling Warrior' on the Line Webtoon app</span>
+   </div>
+  </body>
+ </html> 
