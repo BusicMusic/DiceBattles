@@ -80,7 +80,7 @@ function resetGameField(){
 	
 	var diceImageArray= document.getElementsByClassName("rolledDice");
 	for (var cnt=0; cnt< diceImageArray.length; cnt++){
-		diceImageArray[cnt].src='ImageResources/Q-die.png';
+		diceImageArray[cnt].src='Q-die.png';
 	}
 	
 	document.getElementById("playerActionMessage").innerHTML= "Player 1 will be _________ using a ________ power of _";
@@ -336,8 +336,8 @@ function animateDice(pDie1, pDie2, pDie3, cDie1, cDie2, cDie3){
 	var cDice= [cD1, cD2, cD3];
 	
 	for (var cnt=0; cnt<3; cnt++){
-		pDice[cnt].src="ImageResources/Q-die.png";
-		cDice[cnt].src="ImageResources/Q-die.png";
+		pDice[cnt].src="Q-die.png";
+		cDice[cnt].src="Q-die.png";
 	}
 	
 	//shaking the white die of each player
@@ -408,17 +408,17 @@ function animateDice(pDie1, pDie2, pDie3, cDie1, cDie2, cDie3){
 			//changing the images of the dice once they stop shaking
 			cnt2++;
 			if (x==0){
-				pDice[0].src="ImageResources/"+ pDie1+ "-die.png";
-				cDice[0].src="ImageResources/"+ cDie1+ "-die.png";
+				pDice[0].src=""+ pDie1+ "-die.png";
+				cDice[0].src=""+ cDie1+ "-die.png";
 			}
 			else if (x==1){
 				
-				pDice[1].src="ImageResources/"+ pDie2+ "-die.png";
-				cDice[1].src="ImageResources/"+ cDie2+ "-die.png";
+				pDice[1].src=""+ pDie2+ "-die.png";
+				cDice[1].src=""+ cDie2+ "-die.png";
 			}
 			else if (x==2){
-				pDice[2].src="ImageResources/"+ pDie3+ "-die.png";
-				cDice[2].src="ImageResources/"+ cDie3+ "-die.png";
+				pDice[2].src=""+ pDie3+ "-die.png";
+				cDice[2].src=""+ cDie3+ "-die.png";
 			}
 			if (cnt2==3){
 				cnt2++;
@@ -497,12 +497,12 @@ function restartGame(){
 		totalRoundsPlayed= 0;
 		totalDmgPercentage = 0.00;
 		resetHealth();
-		document.getElementById("playerDie1").src="ImageResources/1-die.png";
-		document.getElementById("playerDie2").src="ImageResources/2-die.png";
-		document.getElementById("playerDie3").src="ImageResources/3-die.png";
-		document.getElementById("computerDie1").src="ImageResources/4-die.png";
-		document.getElementById("computerDie2").src="ImageResources/5-die.png";
-		document.getElementById("computerDie3").src="ImageResources/6-die.png";
+		document.getElementById("playerDie1").src="1-die.png";
+		document.getElementById("playerDie2").src="2-die.png";
+		document.getElementById("playerDie3").src="3-die.png";
+		document.getElementById("computerDie1").src="4-die.png";
+		document.getElementById("computerDie2").src="5-die.png";
+		document.getElementById("computerDie3").src="6-die.png";
 	}
 	resettingGame= false;
 	console.log(resettingGame);
